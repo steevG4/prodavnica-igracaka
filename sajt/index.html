@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="fajlovi/styleIndex.css">
+</head>
+<body onload="vreme()">
+    <div class="meni">
+        <img src="slike/ts.png">
+        <ul class="glavnaLista">    
+    <li><a href="#" onclick="meni(1)">Vlasnici</a> 
+        <ul id="lista1">
+        <li>prvi</li>
+        <li>prvi</li>
+        <li>prvi</li>
+    </ul></li>
+    <li><a href="#" onclick="meni(2)">Prodajna mesta</a> 
+        <ul id="lista2">
+        <li>drugi</li>
+        <li>drugi</li>
+        <li>drugi</li>
+    </ul>
+</li>
+    <li><a href="in.php">najpopularnije igracke</a></li>
+    <li><a href="#">Kontakt</a></li>
+    <li><a href="#">preuzmite nasu brosuru</a></li>
+        </ul> 
+        <div id="vreme"></div>
+        </div>
+	<img src="faks/slike/ts.png" >
+	<div id="levi">
+        <form action="sajt.php" method="post" enctype="multipart/form-data">
+        <h1>Registracija Kupca</h1>
+        <label for="ime">IME:</label><input type="text" id="ime" name="ime"><br>
+        <label for="lozinka">Sifra:</label><input type="password" id="lozinka" name="lozinka"> <br>
+        <label for="jmbg">JMBG</label><input type="text" id="jmbg" name="jmbg"><br>
+         <label for="musko">Musko</label><input type="radio" id="musko" name="pol" value="musko"> <label for="zensko">Zensko</label><input type="radio" id="zensko" name="pol" value="zensko"><br>   
+        <label for="letak">Da li ste zainteresovani za nas letak?</label><input type="checkbox" id="letak" name="letak"><br>
+    <input type="submit" value="registruj se"><input type="reset" value="resetuj">
+    </form>
+	<div id="tekst"><h1>Toy store</h1><p>Dobrodošli u našu čarobnu prodavnicu igračaka! U našem šarenom svetu, dečije mašte postaju stvarnost. Pronađite savršen poklon za vaše mališane ili uplovite u avanturu igrajući se sa najnovijim igračkama na tržištu. Naša kolekcija obuhvata sve, od klasičnih drvenih igračaka do najmodernijih elektronskih gedžeta. Kroz igru, deca uče, rastu i stvaraju nezaboravne uspomene. Posetite nas i otkrijte čaroliju igračaka!<h2>Kod nas mozete kupiti igracke na vise mesecnih rata uz registraciju na sajtu</h2>	</p></div>
+</div>
+    <div id="desni">
+     <h2>Pripremite se za novogodisnju kupovinu na vreme!</h2>
+     <p>nasi ljubazni radnici su tu da vam u svemu pomognu!</p>
+	</div>
+    <script>
+var brojac1 = 0;
+var brojac2 = 0;
+
+function meni(x) {
+    var b = document.getElementById("lista1");
+    var c = document.getElementById("lista2");
+    
+    if (x == 1) {
+        if (brojac1 % 2 == 0) {
+            b.style.display = "block";
+        } else {
+            b.style.display = "none";
+        }
+        brojac1++;
+    } else {
+        if (brojac2 % 2 == 0) {
+            c.style.display = "block";
+        } else {
+            c.style.display = "none";
+        }
+        brojac2++;
+    }
+}
+
+function vreme(){
+var sad=new Date();
+var sati=sad.getHours();
+var minuti=sad.getMinutes();
+var hold=document.getElementById("vreme");
+hold.innerHTML="Tacno je "+sati+":"+minuti;
+setInterval(vreme,6000);
+}
+
+
+
+    </script>
+</body>
+</html>
+
